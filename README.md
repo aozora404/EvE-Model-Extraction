@@ -69,10 +69,11 @@ The normal map cannot be processed directly inside Blender. The following will u
 
 (In GIMP)
 
-1) Decompose the \_no file (Color>Components>Decompose)
-2) Recompose with Red channel as green layer, Green channel as alpha layer, and Blue channel as mask value (255).
+1) Decompose the \_no file (Color>Components>Decompose) (Color model RGBA, Decompose to layers checked).
+2) Compose (Color>Components>Compose) with Red channel as green layer, Green channel as alpha layer, and Blue channel as Mask value (255).
+3) Export as .png.
 
 (In Blender)
 
-3) Plug the normal map into a Normal Map node (Tangent Space, strength arbitrary)
-4) Plug into Normal input
+4) Plug the normal map into a Normal Map node (Tangent Space, strength arbitrary)
+5) Plug into Normal input
