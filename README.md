@@ -81,5 +81,5 @@ The normal map cannot be processed directly inside Blender. The following will u
 
 (In Blender)
 
-3) Plug the normal map into a Normal Map node (Tangent Space, strength arbitrary)
-4) Plug into Normal input
+4) Plug the normal map into a Normal Map node (Tangent Space, strength arbitrary)
+5) Plug into Normal input
