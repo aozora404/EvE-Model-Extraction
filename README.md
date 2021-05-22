@@ -61,7 +61,7 @@ Separate the channels of \_pmdg with a Separate RGB node.
 6) Plug into Base Color input
 
 #### Metallic
-1) Plug the material map (\_pdmg G) into a Color Ramp node (constant interpolation, stops at where the metallic cutoff is (match with color output), color black and white, respectively).
+1) Plug the material map (\_pdmg G) into a Color Ramp node (constant interpolation, stops at 0 and where the metallic cutoff is (match with color output), color black and white, respectively).
 2) Plug into Metallic input
 
 #### Roughness
