@@ -73,9 +73,9 @@ Import the .dds files with the Image Texture node and separate the channels with
 2) Plug into Metallic input
 
 #### Roughness
-~~1) Invert the roughness map (\_ar A) with the Invert node (factor 1).~~
+~~1) Invert the glossiness map (\_ar A) with the Invert node (factor 1).~~
 
-Currently doesn't work, and I don't know why. To work around this, use GIMP to separate out the alpha map, invert it, export as .png.
+Currently doesn't work, and I don't know why. To work around this, use GIMP to separate out the alpha map from the \_ar file, invert it, export as .png.
 
 2) Clamp the output of 1) with the Math node (Multiply, check Clamp, value arbitrary (default 1)). This is to tone the how rough the texture will be.
 3) Plug into Roughness input
