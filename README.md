@@ -34,7 +34,9 @@ A   : Roughness
 
 #### \_no file:
 
-GA  : Normal map
+G   : Normal map X
+
+A   : Normal map Y
 
 B   : Ambient Occlusion
 
