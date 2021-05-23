@@ -56,7 +56,9 @@ You can use an image processing software (such as GIMP) to separate all of these
 
 ### How to unpack (Blender):
 
-Separate the channels of \_pmdg with a Separate RGB node.
+_An implementation of the method listed below can be found inside the included sample file._
+
+Import the .dds files with the Image Texture node and separate the channels with a Separate RGB node.
 
 #### Color
 1) Plug the material map (\_pdmg G) into a Color Ramp node (constant interpolation, stops at (0, 0.25, 0.5, 0.75), color can be arbitrary). The color ramp determines the base color of the model.
