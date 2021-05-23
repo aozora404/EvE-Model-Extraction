@@ -68,10 +68,10 @@ Separate the channels of \_pmdg with a Separate RGB node.
 
 #### Roughness
 ~~1) Invert the roughness map (\_ar A) with the Invert node (factor 1).~~
+
 Currently doesn't work, and I don't know why. To work around this, use GIMP to separate out the alpha map, invert it, export as .png.
 
 2) Clamp the output of 1) with the Math node (Multiply, check Clamp, value arbitrary (default 1)). This is to tone the how rough the texture will be.
-
 3) Plug into Roughness input
 
 
