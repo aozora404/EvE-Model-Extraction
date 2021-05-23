@@ -30,7 +30,7 @@ The usual texture maps are packed into different channels inside several .dds fi
 
 RGB : Albedo
 
-A   : Roughness
+A   : Glossiness
 
 #### \_no file:
 
@@ -51,6 +51,8 @@ B   : Dirt
 A   : Glow
 
 (Note: R=Red, G=Green, B=Blue, A=Alpha)
+
+You can use an image processing software (such as GIMP) to separate all of these out manually. Alternatively, you can directly process (most) .dds files inside Blender with relative ease thanks to the node-based shading system it uses.
 
 ### How to unpack (Blender):
 
