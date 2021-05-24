@@ -78,7 +78,7 @@ Import the .dds files with the Image Texture node and separate the channels with
 6) Plug into Base Color input
 
 #### Metallic
-1) Plug the material map (\_pdmg G) into a Color Ramp node (constant interpolation, stops at 0 and where the metallic cutoff is (match with color output), color black and white, respectively).
+1) Plug the material map (\_pdmg G) into a Color Ramp node (constant interpolation, stops at (0, 0.25, 0.5, 0.75), color black for non-metal and white for metal.
 2) Plug into Metallic input
 
 #### Roughness
