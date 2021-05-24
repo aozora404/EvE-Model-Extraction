@@ -72,7 +72,7 @@ Import the .dds files with the Image Texture node and separate the channels with
 #### Color
 1) Plug the material map (\_pdmg G) into a Color Ramp node (constant interpolation, stops at (0, 0.25, 0.5, 0.75), color can be arbitrary). The color ramp determines the base color of the model.
 2) Add 1) and the paint map (\_pdmg R) with the MixRGB node (Add, factor 1).
-3) Subtract the AO map (\_no B) (color1) and the albedo map (\_ar RGB) (color2) with the MixRGB node (Subtract, factor 0.2).
+3) Multiply the AO map (\_no B) and the albedo map (\_ar RGB) with the MixRGB node (Multiply, factor 1).
 4) Multiply 2) and 3) with the MixRGB node (Multiply, factor 1).
 5) Multiply 4) and the dirt map (\_pdmg B) with the MixRGB node (Multiply, factor arbitrary).
 6) Plug into Base Color input
