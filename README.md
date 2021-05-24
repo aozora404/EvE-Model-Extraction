@@ -30,7 +30,7 @@ The usual texture maps are packed into different channels inside several .dds fi
 
 RGB : Albedo
 
-A   : Glossiness
+A   : Glossiness (inverse of roughness)
 
 #### \_no file:
 
@@ -52,11 +52,20 @@ A   : Glow
 
 (Note: R=Red, G=Green, B=Blue, A=Alpha)
 
-You can use an image processing software (such as GIMP) to separate all of these out manually. Alternatively, you can directly process (most) .dds files inside Blender with relative ease thanks to the node-based shading system it uses.
+You can use an image processing software (such as GIMP) to separate all of these out manually. Using GIMP,
+
+1) Open the file
+2) Decompose the image (Color>Components>Decompose) (Color model RGBA, Decompose to layers checked).
+2.1) (For Albedo map) Compose (Color>Components>Compose) with Color model RGB and channels corresponding to the layers.
+2.2) (For Normal map) Compose (Color>Components>Compose) with Color model RGB, Red channel as green layer, Green channel as alpha layer, and Blue channel as Mask value (255).
+2.3) (For Roughness map) Invert the colors by Right-click>Colors>Invert.
+4) Export as .png.
+
+Alternatively, you can directly process (most) .dds files inside Blender with relative ease thanks to the node-based shading system it uses.
 
 ### How to unpack (Blender):
 
-_An implementation of the method listed below can be found inside the included sample file._
+_An implementation of the method listed below can be found inside the included sample file, named Marshal_Direct.blend._
 
 Import the .dds files with the Image Texture node and separate the channels with a Separate RGB node.
 
@@ -73,7 +82,7 @@ Import the .dds files with the Image Texture node and separate the channels with
 2) Plug into Metallic input
 
 #### Roughness
-~~1) Invert the glossiness map (\_ar A) with the Invert node (factor 1).~~
+Unfortunately, the Roughness map cannot be processed directly inside Blender.
 
 Currently doesn't work, and I don't know why. To work around this, use GIMP to separate out the alpha map from the \_ar file, invert it, export as .png.
 
@@ -86,15 +95,7 @@ Currently doesn't work, and I don't know why. To work around this, use GIMP to s
 2) Plug into Emission input
 
 #### Normal
-The normal map cannot be processed directly inside Blender. The following will use GIMP, but any image editing software should be fine.
+Unfortunately, the normal map cannot be processed directly inside Blender. Use the method listed above to extract the normal map in GIMP and continue as below.
 
-(In GIMP)
-
-1) Decompose the \_no file (Color>Components>Decompose) (Color model RGBA, Decompose to layers checked).
-2) Compose (Color>Components>Compose) with Red channel as green layer, Green channel as alpha layer, and Blue channel as Mask value (255).
-3) Export as .png.
-
-(In Blender)
-
-4) Plug the normal map into a Normal Map node (Tangent Space, strength arbitrary)
-5) Plug into Normal input
+1) Plug the normal map into a Normal Map node (Tangent Space, strength arbitrary)
+2) Plug into Normal input
