@@ -82,12 +82,10 @@ Import the .dds files with the Image Texture node and separate the channels with
 2) Plug into Metallic input
 
 #### Roughness
-Unfortunately, the Roughness map cannot be processed directly inside Blender.
+Unfortunately, the Roughness map cannot be processed directly inside Blender. Use the method listed above to extract the roughness map in GIMP and continue as below.
 
-Currently doesn't work, and I don't know why. To work around this, use GIMP to separate out the alpha map from the \_ar file, invert it, export as .png.
-
-2) Clamp the output of 1) with the Math node (Multiply, check Clamp, value arbitrary (default 1)). This is to tone the how rough the texture will be.
-3) Plug into Roughness input
+1) (Optional) Clamp the value of the roughness with the Math node (Multiply, check Clamp, value arbitrary (default 1)). This is to tone the how rough the texture will be.
+2) Plug into Roughness input
 
 
 #### Emission
