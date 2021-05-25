@@ -99,4 +99,4 @@ Unfortunately, the normal map cannot be processed directly inside Blender. Use t
 2) Plug into Normal input
 
 
-If you made it this far, please consider subscrbing to my youtube channel [https://www.youtube.com/channel/UCwF3VyalTHzL0L-GDlwtbRw](https://www.youtube.com/watch?v=dQw4w9WgXcQ). ISK donations are always welcome but I prefer to be paid in Veldspar.
+If you made it this far, please consider subscribing to my youtube channel [https://www.youtube.com/channel/UCwF3VyalTHzL0L-GDlwtbRw](https://www.youtube.com/watch?v=dQw4w9WgXcQ). ISK donations are always welcome but I prefer to be paid in Veldspar.
