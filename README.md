@@ -63,13 +63,15 @@ You can use an image processing software (such as GIMP) to separate all of these
 
 Alternatively, you can directly process (most) .dds files inside Blender with relative ease thanks to the node-based shading system it uses.
 
-### How to unpack (Blender):
+### How to unpack
+
+#### Method 1: Manual
 
 _An implementation of the method listed below can be found inside the included sample file, named Marshal_Direct.blend._
 
 Import the .dds files with the Image Texture node and separate the channels with a Separate RGB node.
 
-#### Color
+##### Color
 1) Plug the material map (\_pdmg G) into a Color Ramp node (constant interpolation, stops at (0, 0.25, 0.5, 0.75), color can be arbitrary). The color ramp determines the base color of the model.
 2) Add 1) and the paint map (\_pdmg R) with the MixRGB node (Add, factor 1).
 3) Multiply the AO map (\_no B) and the albedo map (\_ar RGB) with the MixRGB node (Multiply, factor 1).
@@ -77,26 +79,33 @@ Import the .dds files with the Image Texture node and separate the channels with
 5) Multiply 4) and the dirt map (\_pdmg B) with the MixRGB node (Multiply, factor arbitrary).
 6) Plug into Base Color input
 
-#### Metallic
+##### Metallic
 1) Plug the material map (\_pdmg G) into a Color Ramp node (constant interpolation, stops at (0, 0.25, 0.5, 0.75), color black for non-metal and white for metal.
 2) Plug into Metallic input
 
-#### Roughness
+##### Roughness
 Unfortunately, the Roughness map cannot be processed directly inside Blender. Use the method listed above to extract the roughness map in GIMP and continue as below.
 
 1) (Optional) Clamp the value of the roughness with the Math node (Multiply, check Clamp, value arbitrary (default 1)). This is to tone the how rough the texture will be.
 2) Plug into Roughness input
 
 
-#### Emission
+##### Emission
 1) Plug the glow map (\_pmdg A) into a Color Ramp node (ease interpolation, stops at (0, arbitrary), color black and arbitrary, respectively).
 2) Plug into Emission input
 
-#### Normal
+##### Normal
 Unfortunately, the normal map cannot be processed directly inside Blender. Use the method listed above to extract the normal map in GIMP and continue as below.
 
 1) Plug the normal map into a Normal Map node (Tangent Space, strength arbitrary)
 2) Plug into Normal input
 
+#### Method 2: Using Pre-made Group Nodes
+This method is far easier than method 1, though the shader used is a bit outdated (it doesn't use Principled BSDF). Thanks to Neuntausend for uploading the files on Google Drive and not some god-forsaken file hoster.
+
+1) Enable the Node Presets Add-on.
+2) Set a folder for the Add-on to read node presets from.
+3) Download the files included into the folder set in 2). There are 2 versions of the preset, the standard and the pro. The standard is easier to use, though the pro version allows for more freedom.
+4) To add the preset nodes, press Shift-A > Template > EVE Hull Shader in the shader editor.
 
 If you made it this far, please consider subscribing to my youtube channel [https://www.youtube.com/channel/UCwF3VyalTHzL0L-GDlwtbRw](https://www.youtube.com/watch?v=dQw4w9WgXcQ). ISK donations are always welcome but I prefer to be paid in Veldspar.
