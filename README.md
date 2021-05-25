@@ -105,7 +105,9 @@ This method is far easier than method 1, though the shader used is a bit outdate
 
 1) Enable the Node Presets Add-on.
 2) Set a folder for the Add-on to read node presets from.
-3) Download the files included into the folder set in 2). There are 2 versions of the preset, the standard and the pro. The standard is easier to use, though the pro version allows for more freedom.
+3) Download the files inside Node Presets into the folder set in 2). There are 2 versions of the preset, the standard and the pro. The standard is easier to use, though the pro version allows for more freedom.
 4) To add the preset nodes, press Shift-A > Template > EVE Hull Shader in the shader editor.
+
+# Closing
 
 If you made it this far, please consider subscribing to my youtube channel [https://www.youtube.com/channel/UCwF3VyalTHzL0L-GDlwtbRw](https://www.youtube.com/watch?v=dQw4w9WgXcQ). ISK donations are always welcome but I prefer to be paid in Veldspar.
